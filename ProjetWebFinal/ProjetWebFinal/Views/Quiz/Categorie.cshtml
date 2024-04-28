@@ -1,0 +1,33 @@
+﻿<h1>@ViewBag.bonneReponse</h1>
+<h1>@ViewBag.reponse</h1>
+<h1>@ViewBag.pareil</h1>
+<h1>@ViewBag.points</h1>
+
+
+<form asp-action="Index" method="get">
+
+
+    <label for="idCategorie">Les categories </label>
+
+    <button type="submit" name="categorie" value="geographie">Geo</button>
+    <button type="submit" name="categorie" value="science">Science</button>
+    <button type="submit" name="categorie" value="sport">Sport</button>
+    <button type="submit" name="categorie" value="histoire">Histoire</button>
+    <button type="submit" name="categorie" value="animaux">Animaux</button>
+    <button type="submit" name="categorie" value="programmation">Programmation</button>
+
+
+
+
+</form>
+<form asp-action="FinDePartie" method="get">
+
+
+
+            <button type="submit" name="fin" value="fin" >Fin de partie</button>
+
+   
+
+
+
+</form>

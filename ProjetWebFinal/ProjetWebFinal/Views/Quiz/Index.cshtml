@@ -1,0 +1,147 @@
+﻿
+
+@model Joueur
+
+
+
+<div class="h-100  w-100">
+
+
+
+
+
+    <div class="d-flex  align-items-center">
+        
+        
+        <div class="d-flex flex-column justify-content-between col-8">
+
+
+            <div id="ecranAttente" style="display: none;">
+
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="h1 mr-3 text-muted">En attente des réponses des autres joueurs</h1>
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="ecranQuiz">
+                <form asp-action="Categorie" method="get">
+                    <div class="bg-white shadow-sm d-flex flex-column mb-3 justify-content-center">
+
+                        <div id="ecranQuestion" style="display: none;">
+                            <h2 class="align-self-end m-3 text-muted h4 text-capitalize" id="categorie"> @ViewBag.laCategorie</h2>
+                            <h1 class="align-self-start m-3 h1 text-capitalize" id="question">
+                                @ViewBag.question
+                            </h1>
+                        </div>
+
+                        <div id="ecranCommence" class="d-flex flex-column justify-content-center p-3">
+                            <h1 class="h1 text-capitalize m-auto p-3" id="question">
+                                Le Quiz Commencera Sous Peu
+                            </h1>
+                            <input id="btnCommencer" type="button" class="btn btn-primary btn-lg w-50 m-auto text-center" value="Commencez">
+                        </div>
+
+
+
+                    </div>
+                    <div id="lesReponses">
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="ecranScore" style="display: none;">
+
+                <div class="py-2 px-4 border-bottom d-lg-block">
+                    <div class="d-flex align-items-center py-1 justify-content-center">
+                        <div class="flex-grow">
+                            <h2 class="h2 text-capitalize">La Bonne Reponse Est: </h2>
+                            <h3 class="h3 text-muted text-capitalize" id="messageFinTour"></h3>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="bonneReponse">
+
+                </div>
+                <div class="py-2 px-4 border-bottom d-lg-block">
+                    <div class="d-flex align-items-center py-1 justify-content-center">
+                        <div class="flex-grow">
+                            <h2 class="h2 text-capitalize">Votre Réponse etait: </h2>
+                            <h3 class="h3 text-muted text-capitalize" id="messageFinTour"></h3>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="votreReponse">
+
+                </div>
+
+                <div class="py-2 px-4 border-bottom d-lg-block">
+                    <div class="d-flex align-items-center py-1 justify-content-center">
+                        <div class="flex-grow">
+                            <h2 class="h2 text-capitalize">Classement</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="classements">
+
+                </div>
+
+                <input type="submit" class="btn btn-primary m-2 m-auto" id="nextQuestion" value="Next question" onclick="nextQuestion()"></input>
+            </div>
+        </div>
+        
+        <div class="col">
+
+            <main class="content">
+                <div class="container p-0">
+
+                    <div class="card">
+                        <div class="py-2 px-4 border-bottom d-lg-block">
+                            <div class="d-flex align-items-center py-1 justify-content-center">
+                                <div class="flex-grow">
+                                    <h2 class="h4 text-capitalize">Conversations</h2>
+                                    <h3 class="h6 text-muted text-capitalize" id="username">@Model.nom_joueur</h3>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="position-relative">
+                            <div class="chat-messages p-4" id="messagesList">
+                            </div>
+                        </div>
+
+                        <div class="flex-grow-0 py-3 px-4 border-top">
+                            <div class="input-group">
+
+
+                                <textarea class="form-control" rows="2" placeholder="Entrez votre message" style="resize:none;" id="messageInput"></textarea>
+
+                                <input type="submit" class="btn btn-primary ml-2" id="sendButton" value="send"></input>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/css/chat.css" asp-append-version="true"/>
+
+

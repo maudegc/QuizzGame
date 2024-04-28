@@ -1,0 +1,33 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div id="deleteQuestion">
+    <form id="formDeleteQuestion">
+        <label for="id_delete">Id de la question à supprimer</label><br>
+        <input name="id_delete" id="id_delete" /><br><br />
+        <button class="button btn btn-primary" onclick="deleteQuestion()">Delete question</button>
+    </form>
+    
+</div>
+<script>
+    function deleteQuestion() {
+        var id = document.getElementById("id_delete").value;
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.status == 200 || this.status == 204) {
+                alert("Suppression Question Réussi");
+            }
+            else {
+                alert("ERREUR");
+            }
+        }
+
+        xhttp.open("DELETE", "https://localhost:44332/supprimerQuestion/" + id, true);
+        xhttp.setRequestHeader("ApiKey", "1111");
+        xhttp.send();
+    }
+</script>

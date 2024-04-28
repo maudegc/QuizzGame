@@ -1,0 +1,1585 @@
+https://www.quizz.fr/2014/03/03/quizz-sport-9/
+
+BD GestionQuiz
+
+CREATE TABLE IF NOT EXISTS Question ( 
+  id_question INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+  id_bonne_reponse INT NOT NULL, 
+  nom_question VARCHAR(255) NOT NULL, 
+  categorie VARCHAR(255) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS Reponse ( 
+  id_reponse INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+  id_question INT NOT NULL, 
+  nom_reponse VARCHAR(255) NOT NULL ,
+  FOREIGN KEY (id_question) REFERENCES Question (id_question)
+);
+ 
+CREATE TABLE IF NOT EXISTS Joueur ( 
+  id_joueur INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+  nom_joueur VARCHAR(30), 
+  mot_passe VARCHAR(50) NOT NULL, 
+  score_science	INT, 
+  score_histoire INT, 
+  score_sport INT, 
+  score_art INT, 
+  score_programmation INT, 
+  score_geo INT 
+);  
+
+(Une fois que tout est créé)
+ALTER TABLE question ADD FOREIGN KEY question(id_bonne_reponse) REFERENCES reponse(id_reponse); 
+
+//INSERTION DANS BD
+//Insérer les questions de chaque catégorie avant les réponses
+
+//SCIENCE
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu'est-ce que le diaphragme ?", 2, "Science");
+
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien de satellites naturels gravitent autour de la Terre ?", 5, "Science");
+
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelle est la somme des angles d’un triangle ?", 11, "Science");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("En quelle année aura lieu la prochaine apparition de la comète Haley ?", 14, "Science");
+
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le nom de l’unité de résistance électrique ?", 17, "Science");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("À quel inventeur doit-on la première calculatrice ?", 21, "Science");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Comment nomme-t-on l’effet d’une glycémie trop élevée ?", 27, "Science");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien font 122 x 12 ?", 30, "Science");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel métal alcalin est symbolisé par la lettre K ?", 35, "Science");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelles sont les deux plus grosses planètes du système solaire ?", 40, "Science");
+
+
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un os",1);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un muscle",1);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une vertèbre",1);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un tendon",1);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1",2);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2",2);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("3",2);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("4",2);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("90°",3);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("120°",3);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("180°",3);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("360°",3);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2025",4);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2061",4);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2216",4);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2472",4);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Ohm",5);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Ampère",5);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Watt",5);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Volt",5);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Blaise Pascal",6);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Henri Becquerel",6);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Rudolf Diesel",6);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Thomas Edison",6);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L’hypoglycémie",7);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les triglycérides",7);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L’hyperglycémie",7);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L’aérophagie",7);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1212",8);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1464",8);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1636",8);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2444",8);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le lithium",9);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le sodium",9);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le potassium",9);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le césium",9);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Jupiter et Vénus",10);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Pluton et Uranus",10);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Mars et Mercure",10);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Jupiter et Saturne",10);
+
+
+
+
+// GEO
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est la capital du Rwanda?", 42, "Geographie");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel fleuve traverse Paris ?", 47, "Geographie");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le plus grand port d'Europe ?", 49, "Geographie");
+
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le fleuve qui a le plus fort débit au monde ?", 56, "Geographie");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel continent compte le plus grand nombre de pays ?", 59, "Geographie");
+
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le plus grand pays du continent africain ?", 62, "Geographie");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Sur une carte au 1:250.00, combien représente un centimètre ?", 66, "Geographie");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Lequel de ces pays est le plus peuplé ?", 71, "Geographie");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Dans quel pays de Rhin prend-il sa source ?", 73, "Geographie");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Sur combien de pays s'étend le désert du sahara ?", 78, "Geographie");
+
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Berlin",11);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Kigali",11);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Hanoï",11);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);   
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La Seine",11);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Rotterdam",13);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Kingston",13);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Kelang",13);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Gladstone",13);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La Medjerda",14);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Congo",14);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Fraser",14);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Amazone",14);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("l'Asie",15);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Europe",15);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Afrique",15);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Amérique",15);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("le Soudan",16);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Algérie",16);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Tchad",16);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Kenya",16);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("250 mètres",17);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2.5 km",17);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("25 km",17);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("250 km",17);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("l'Argentine",18);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",18);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Japon",18);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Égypte",18);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Suisse",19);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Autriche",19);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Allemagne",19);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Ukraine",19);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("5",20);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("10",20);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("15",20);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("20",20);
+
+
+
+//"HISTOIRE"
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu'est-ce que la Commune de Paris ?", 82, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui a dirigé le syndicat polonais Solidarnosc dans les années 80 ?", 87, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Comment se nommait le fils de Charlemagne qui lui succéda ?", 89, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("En quelle année, De Gaulle a-t-il fait voter l’élection au suffrage universel direct ?", 95, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel jour a été appelé « le jour le plus long » ?", 98, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Dans quel pays eut lieu la « Dictature des colonels » ?", 104, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui a dit : « Je veux être le frère des blancs, pas leur beau-frère » ?", 108, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui était le premier ministre d’Israël entre 1969 et 1974 ?", 110, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel pays a cédé la Floride aux Américains en 1819 ?", 114, "Histoire");
+
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Où le serment du jeu de paume a-t-il été pronocé ?", 120, "Histoire");
+
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Manifestation Pacifique pendant la guerre Franco-Prussienne",21);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Période d'insurrection à Paris en 1871",21);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Elément déclencheur de la révolution Française",21);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Bâtiment le plus grand de Paris",21);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Boris Eltsine",22);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Tito",22);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Lech Walesa",22);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Wladyslaw Gomulka",22);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Louis Le Pieux",23);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Pépin d'Italie",23);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Lothaire",23);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Charles Le Jeune",23);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1945",24);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1948",24);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1962",24);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1969",24);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("22 juin 1941",25);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("6 juin 1944",25);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("8 mai 1945",25);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("6 août 1945",25);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Argentine",26);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Portugal",26);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Espagne",26);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Grèce",26);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Malcom X",27);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Barack Obama",27);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Spike Lee",27);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Marthin Luther King",27);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("David Ben Gourion",28);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Golda Meir",28);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Yitzhak Rabin",28);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Menahem Begin",28);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",29);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Espagne",29);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Royaume-Uni",29);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Cuba",29);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Reims",30);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Vichy",30);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Paris",30);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Versailles",30);
+
+
+//SPORT
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel sport est pratiqué lors de Roland Garros ?", 123, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel sport a été inventé par un pasteur canadien installé dans le Massachusetts ?", 126, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel pays a remporté la Coupe du monde de Football en 1998 ?", 132, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien de fois, Alain Prost a-t-il été champion du monde de Formule 1 ?", 134, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelle équipe féminine de volley-ball a été sacrée championne olympique aux JO de Londres en 2012 ?", 137, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Dans quelle ville se trouve le stade du Nou Camp ?", 144, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui était Louison Bobet ?", 148, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Durant quel mois de déroule la course du Paris-Roubaix ?", 151, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Avec quelle nage commence-t-on l'épreuve de 4 nages ?", 153, "Sport");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("En quelle année le golf redeviendra un sport olympique ?", 157, "Sport");
+
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Voile",31);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Judo",31);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Tennis",31);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Natation",31);
+
+INSERT Qu
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le hockey",32);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le basket",32);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le football américain",32);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le curling",32);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Italie",33);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Brésil",33);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Allemagne'",33);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",33);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2",34);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("4",34);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("8",34);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Jamais",34);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Brésil",35);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les États-Unis",35);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Japon",35);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",35);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Bilbao",36);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Valence",36);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Madrid",36);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Barcelone",36);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un boxeur",37);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un tennisman",37);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un sauteur en hauteur",37);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un cycliste",37);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Janvier",38);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Mars",38);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Avril",38);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Septembre",38);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le papillon",39);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le dos",39);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La brasse",39);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le crawl",39);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2016",40);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2020",40);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2024",40);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2028",40);
+
+
+//ANIMAUX
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel animal ne vole pas?", 163, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu’étudie un arachnologue?", 167, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel animal a pour symbolisme la grâce?", 171, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu’est-ce qu’une pipistrelle?", 174, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelle race de chien est Bill, fidèle compagnon de Boule?", 179, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel nom porte l’habitat du castor?", 181, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le nom de la femelle du sanglier ?", 186, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Comment se nomme le petit du corbeau ?", 191, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu’est-ce qu’un verrat ?", 196, "Animaux");
+
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien un poulpe a-t-il de tentacules ?", 199, "Animaux");
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le pingouin",41);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La cigogne",41);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le manchot",41);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le pélican",41);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les rats",42);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les serpents",42);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les araignées",42);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les aigles",42);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le flamant",43);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le paon",43);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le cygne",43);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le kangourou",43);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une brebis",44);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une chauve-souris",44);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une girafe",44);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une otarie",44);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un caniche",45);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un beagle",45);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un cocker",45);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un labrador",45);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une hutte",46);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une tanière",46);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une aire",46);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un terrier",46);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La hase",47);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La laie",47);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La sangliette",47);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La truie",47);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbillon",48);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbeau",48);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbillat",48);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbain",48);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un renard",49);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un oiseau",49);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un insecte",49);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un cochon",49);
+
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("6",50);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("7",50);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("8",50);
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("10",50);
+
+
+
+
+
+
+
+
+
+//NE PAS INSERT DANS LA BD À TITRE INFORMATIQUE
+//BD Avec commentaires pour voir les bonnes reponses
+
+//SCIENCE
+
+//Question 1
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu'est-ce que le diaphragme ?", 2, "Science");
+
+//Reponse 1
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un os",1);
+//Reponse 2 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un muscle",1);
+//Reponse 3
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une vertèbre",1);
+//Reponse 4
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un tendon",1);
+
+
+//Question 2
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien de satellites naturels gravitent autour de la Terre ?", 5, "Science");
+
+//Reponse 5 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1",2);
+//Reponse 6
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2",2);
+//Reponse 7
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("3",2);
+//Reponse 8
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("4",2);
+
+
+//Question 3
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelle est la somme des angles d’un triangle ?", 11, "Science");
+
+//Reponse 9
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("90°",3);
+//Reponse 10
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("120°",3);
+//Reponse 11 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("180°",3);
+//Reponse 12
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("360°",3);
+
+
+//Question 4
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("En quelle année aura lieu la prochaine apparition de la comète Haley ?", 14, "Science");
+
+//Reponse 13
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2025",4);
+//Reponse 14 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2061",4);
+//Reponse 15
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2216",4);
+//Reponse 16
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2472",4);
+
+
+//Question 5
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le nom de l’unité de résistance électrique ?", 17, "Science");
+
+//Reponse 17 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Ohm",5);
+//Reponse 18
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Ampère",5);
+//Reponse 19
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Watt",5);
+//Reponse 20
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Volt",5);
+
+
+//Question 6
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("À quel inventeur doit-on la première calculatrice ?", 21, "Science");
+
+//Reponse 21 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Blaise Pascal",6);
+//Reponse 22
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Henri Becquerel",6);
+//Reponse 23
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Rudolf Diesel",6);
+//Reponse 24
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Thomas Edison",6);
+
+
+//Question 7
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Comment nomme-t-on l’effet d’une glycémie trop élevée ?", 27, "Science");
+
+//Reponse 25
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L’hypoglycémie",7);
+//Reponse 26
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les triglycérides",7);
+//Reponse 27 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L’hyperglycémie",7);
+//Reponse 28
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L’aérophagie",7);
+
+
+//Question 8
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien font 122 x 12 ?", 30, "Science");
+
+//Reponse 29
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1212",8);
+//Reponse 30 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1464",8);
+//Reponse 31
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1636",8);
+//Reponse 32
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2444",8);
+
+
+//Question 9
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel métal alcalin est symbolisé par la lettre K ?", 35, "Science");
+
+//Reponse 33
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le lithium",9);
+//Reponse 34
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le sodium",9);
+//Reponse 35 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le potassium",9);
+//Reponse 36
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le césium",9);
+
+
+//Question 10
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelles sont les deux plus grosses planètes du système solaire ?", 40, "Science");
+
+//Reponse 37
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Jupiter et Vénus",10);
+//Reponse 38
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Pluton et Uranus",10);
+//Reponse 39
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Mars et Mercure",10);
+//Reponse 40 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Jupiter et Saturne",10);
+
+
+// GEO
+
+//Question 11
+INSERT INTO Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est la capital du Rwanda?", 42, "Geographie");
+
+//Reponse 41
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Berlin",11);
+//Reponse 42 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Kigali",11);
+//Reponse 43
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Hanoï",11);
+//Reponse 44
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);   
+
+
+//Question 12
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel fleuve traverse Paris ?", 47, "Geographie")
+
+//Reponse 45
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);
+//Reponse 46
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);
+//Reponse 47 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La Seine",11);
+//Reponse 48
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Conakry",11);
+
+
+//Question 13
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le plus grand port d'Europe ?", 49, "Geographie")
+
+//Reponse 49 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Rotterdam",13);
+//Reponse 50
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Kingston",13);
+//Reponse 51
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Kelang",13);
+//Reponse 52
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Gladstone",13);
+
+//Question 14
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le fleuve qui a le plus fort débit au monde ?", 56, "Geographie")
+
+//Reponse 53
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La Medjerda",14);
+//Reponse 54
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Congo",14;
+//Reponse 55
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Fraser",14);
+//Reponse 56 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Amazone",14);
+
+
+//Question 15
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel continent compte le plus grand nombre de pays ?", 59, "Geographie")
+
+//Reponse 57
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("l'Asie",15);
+//Reponse 58
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Europe",15;
+//Reponse 59 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Afrique",15);
+//Reponse 60
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Amérique",15);
+
+
+//Question 16
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le plus grand pays du continent africain ?", 62, "Geographie")
+
+//Reponse 61
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("le Soudan",16);
+//Reponse 62 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Algérie",16;
+//Reponse 63
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Tchad",16);
+//Reponse 64
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Kenya",16);
+
+
+//Question 17
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Sur une carte au 1:250.00, combien représente un centimètre ?", 66, "Geographie")
+
+//Reponse 65
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("250 mètres",17);
+//Reponse 66 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2.5 km",17;
+//Reponse 67
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("25 km",17);
+//Reponse 68
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("250 km",17);
+
+
+//Question 18
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Lequel de ces pays est le plus peuplé ?", 71, "Geographie")
+
+//Reponse 69
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("l'Argentine",18);
+//Reponse 70
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",18);
+//Reponse 71 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Japon",18);
+//Reponse 72
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Égypte",18);
+
+
+//Question 19
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Dans quel pays de Rhin prend-il sa source ?", 73, "Geographie")
+
+//Reponse 73 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Suisse",19);
+//Reponse 74
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Autriche",19);
+//Reponse 75
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Allemagne",19);
+//Reponse 76
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("En Ukraine",19);
+
+
+//Question 20
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Sur combien de pays s'étend le désert du sahara ?", 78, "Geographie")
+
+//Reponse 77
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("5",20);
+//Reponse 78 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("10",20);
+//Reponse 79
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("15",20);
+//Reponse 80
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("20",20);
+
+
+
+//"HISTOIRE"
+
+//Question 21
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu'est-ce que la Commune de Paris ?", 82, "Histoire")
+
+//Reponse 81
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Manifestation Pacifique pendant la guerre Franco-Prussienne",21);
+//Reponse 82 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Période d'insurrection à Paris en 1871",21);
+//Reponse 83
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Elément déclencheur de la révolution Française",21);
+//Reponse 84
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Bâtiment le plus grand de Paris",21);
+
+
+//Question 22
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui a dirigé le syndicat polonais Solidarnosc dans les années 80 ?", 87, "Histoire")
+
+//Reponse 85
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Boris Eltsine",22);
+//Reponse 86
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Tito",22);
+//Reponse 87 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Lech Walesa",22);
+//Reponse 88
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Wladyslaw Gomulka",22);
+
+
+//Question 23
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Comment se nommait le fils de Charlemagne qui lui succéda ?", 89, "Histoire")
+
+//Reponse 89 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Louis Le Pieux",23);
+//Reponse 90
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Pépin d'Italie",23);
+//Reponse 91
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Lothaire",23);
+//Reponse 92
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Charles Le Jeune",23);
+
+
+//Question 24
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("En quelle année, De Gaulle a-t-il fait voter l’élection au suffrage universel direct ?", 95, "Histoire")
+
+//Reponse 93
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1945",24);
+//Reponse 94
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1948",24);
+//Reponse 95 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1962",24);
+//Reponse 96
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("1969",24);
+
+
+//Question 25
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel jour a été appelé « le jour le plus long » ?", 98, "Histoire")
+
+//Reponse 97
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("22 juin 1941",25);
+//Reponse 98 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("6 juin 1944",25);
+//Reponse 99
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("8 mai 1945",25);
+//Reponse 100
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("6 août 1945",25);
+
+
+//Question 26
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Dans quel pays eut lieu la « Dictature des colonels » ?", 104, "Histoire")
+
+//Reponse 101
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Argentine",26);
+//Reponse 102
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Portugal",26);
+//Reponse 103
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Espagne",26);
+//Reponse 104 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Grèce",26);
+
+
+//Question 27
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui a dit : « Je veux être le frère des blancs, pas leur beau-frère » ?", 108, "Histoire")
+
+//Reponse 105
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Malcom X",27);
+//Reponse 106
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Barack Obama",27);
+//Reponse 107
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Spike Lee",27);
+//Reponse 108 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Marthin Luther King",27);
+
+
+//Question 28
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui était le premier ministre d’Israël entre 1969 et 1974 ?", 110, "Histoire")
+
+//Reponse 109
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("David Ben Gourion",28);
+//Reponse 110 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Golda Meir",28);
+//Reponse 111
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Yitzhak Rabin",28);
+//Reponse 112
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Menahem Begin",28);
+
+
+//Question 29
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel pays a cédé la Floride aux Américains en 1819 ?", 114, "Histoire")
+
+//Reponse 113
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",29);
+//Reponse 114 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Espagne",29);
+//Reponse 115
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Royaume-Uni",29);
+//Reponse 116
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Cuba",29);
+
+
+//Question 30
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Où le serment du jeu de paume a-t-il été pronocé ?", 120, "Histoire")
+
+//Reponse 117
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Reims",30);
+//Reponse 118 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Vichy",30);
+//Reponse 119
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Paris",30);
+//Reponse 120
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("À Versailles",30);
+
+
+//SPORT
+
+//Question 31
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel sport est pratiqué lors de Roland Garros ?", 123, "Sport")
+
+//Reponse 121
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Voile",31);
+//Reponse 122
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Judo",31);
+//Reponse 123 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Tennis",31);
+//Reponse 124
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Natation",31);
+
+
+//Question 32
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel sport a été inventé par un pasteur canadien installé dans le Massachusetts ?", 126, "Sport")
+
+//Reponse 125
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le hockey",32);
+//Reponse 126 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le basket",32);
+//Reponse 127
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le football américain",32);
+//Reponse 128
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le curling",32);
+
+
+//Question 33
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel pays a remporté la Coupe du monde de Football en 1998 ?", 132, "Sport")
+
+//Reponse 129
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Italie",33);
+//Reponse 130
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Brésil",33);
+//Reponse 131
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("L'Allemagne'",33);
+//Reponse 132 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",33);
+
+
+//Question 34
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien de fois, Alain Prost a-t-il été champion du monde de Formule 1 ?", 134, "Sport")
+
+//Reponse 133
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2",34);
+//Reponse 134 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("4",34);
+//Reponse 135
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("8",34);
+//Reponse 136
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Jamais",34);
+
+
+//Question 35
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelle équipe féminine de volley-ball a été sacrée championne olympique aux JO de Londres en 2012 ?", 137, "Sport")
+
+//Reponse 137 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Brésil",35);
+//Reponse 138
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les États-Unis",35);
+//Reponse 139
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le Japon",35);
+//Reponse 140
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La France",35);
+
+
+//Question 36
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Dans quelle ville se trouve le stade du Nou Camp ?", 144, "Sport")
+
+//Reponse 141
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Bilbao",36);
+//Reponse 142
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Valence",36);
+//Reponse 143
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Madrid",36);
+//Reponse 144 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Barcelone",36);
+
+
+//Question 37
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qui était Louison Bobet ?", 148, "Sport")
+
+//Reponse 145
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un boxeur",37);
+//Reponse 146
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un tennisman",37);
+//Reponse 147
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un sauteur en hauteur",37);
+//Reponse 148 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un cycliste",37);
+
+
+//Question 38
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Durant quel mois de déroule la course du Paris-Roubaix ?", 151, "Sport")
+
+//Reponse 149
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Janvier",38);
+//Reponse 150
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Mars",38);
+//Reponse 151 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Avril",38);
+//Reponse 152
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Septembre",38);
+
+
+//Question 39
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Avec quelle nage commence-t-on l'épreuve de 4 nages ?", 153, "Sport")
+
+//Reponse 153 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le papillon",39);
+//Reponse 154
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le dos",39);
+//Reponse 155
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La brasse",39);
+//Reponse 156
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le crawl",39);
+
+
+//Question 40
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("En quelle année le golf redeviendra un sport olympique ?", 157, "Sport")
+
+//Reponse 157 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2016",40);
+//Reponse 158
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2020",40);
+//Reponse 159
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2024",40);
+//Reponse 160
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("2028",40);
+
+
+//ANIMAUX
+
+//Question 41
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel animal ne vole pas ?", 163, "Animaux")
+
+//Reponse 161
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le pingouin",41);
+//Reponse 162
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La cigogne",41);
+//Reponse 163 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le manchot",41);
+//Reponse 164
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le pélican",41);
+
+
+//Question 42
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu’étudie un arachnologue ?", 167, "Animaux")
+
+//Reponse 165
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les rats",42);
+//Reponse 166
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les serpents",42);
+//Reponse 167 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les araignées",42);
+//Reponse 168
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Les aigles",42);
+
+
+//Question 43
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel animal a pour symbolisme la grâce ?", 171, "Animaux")
+
+//Reponse 169
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le flamant",43);
+//Reponse 170
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le paon",43);
+//Reponse 171 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le cygne",43);
+//Reponse 172
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le kangourou",43);
+
+
+//Question 44
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu’est-ce qu’une pipistrelle ?", 174, "Animaux")
+
+//Reponse 173
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une brebis",44);
+//Reponse 174 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une chauve-souris",44);
+//Reponse 175
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une girafe",44);
+//Reponse 176
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une otarie",44);
+
+
+//Question 45
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quelle race de chien est Bill, fidèle compagnon de Boule ?", 179, "Animaux")
+
+//Reponse 177
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un caniche",45);
+//Reponse 178
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un beagle",45);
+//Reponse 179 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un cocker",45);
+//Reponse 180
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un labrador",45);
+
+
+//Question 46
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel nom porte l’habitat du castor ?", 181, "Animaux")
+
+//Reponse 181 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une hutte",46);
+//Reponse 182
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une tanière",46);
+//Reponse 183
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Une aire",46);
+//Reponse 184
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un terrier",46);
+
+
+//Question 47
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Quel est le nom de la femelle du sanglier ?", 186, "Animaux")
+
+//Reponse 185
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La hase",47);
+//Reponse 186 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La laie",47);
+//Reponse 187
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La sangliette",47);
+//Reponse 188
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("La truie",47);
+
+
+//Question 48
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Comment se nomme le petit du corbeau ?", 191, "Animaux")
+
+//Reponse 189
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbillon",48);
+//Reponse 190
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbeau",48);
+//Reponse 191 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbillat",48);
+//Reponse 192
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Le corbain",48);
+
+
+//Question 49
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Qu’est-ce qu’un verrat ?", 196, "Animaux")
+
+//Reponse 193
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un renard",49);
+//Reponse 194
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un oiseau",49);
+//Reponse 195
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un insecte",49);
+//Reponse 196 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("Un cochon",49);
+
+
+//Question 50
+INSERT Question (nom_question, id_bonne_reponse, categorie)
+VALUES ("Combien un poulpe a-t-il de tentacules ?", 199, "Animaux")
+
+//Reponse 197
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("6",50);
+//Reponse 198
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("7",50);
+//Reponse 199 Bonne reponse
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("8",50);
+//Reponse 200
+INSERT INTO Reponse (nom_reponse, id_question)
+VALUES ("10",50);
+
+
+// PROGRAMMATION

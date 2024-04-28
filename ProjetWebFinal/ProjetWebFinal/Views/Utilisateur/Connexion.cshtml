@@ -1,0 +1,36 @@
+﻿@model Joueur
+<div class="d-flex justify-content-center align-items-center boxContent">
+    <div class="container border bg-white h-70">
+        <div>
+           
+            <form method="post" class="container p-5">
+
+                <div class="form-group row justify-content-center">
+                    <h2>SE CONNECTER</h2>
+                </div>
+                @if (ViewBag.ErreurConnexion != null)
+                {
+                    <p class="text-danger">@ViewBag.ErreurConnexion</p>
+                }
+                <hr>
+                <div class="form-group">
+                    <input asp-for="nom_joueur" class="form-control" placeholder="Nom d'utilisateur">
+                    <span asp-validation-for="nom_joueur" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="mot_passe" class="form-control" type="password" placeholder="Mot de Passe">
+                    <span asp-validation-for="mot_passe" class="text-danger"></span>
+                </div>
+                @ViewBag.ok
+                <div>
+
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-primary form-group">Connexion</button>
+                    </div>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>

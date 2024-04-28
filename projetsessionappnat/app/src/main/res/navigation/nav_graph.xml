@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_login">
+
+    <fragment
+        android:id="@+id/fragment_quiz"
+        android:name="com.example.quiznat.présentation.vue.Fragment_quiz"
+        android:label="Fragment_quiz"
+        tools:layout="@layout/fragment_quiz"/>
+
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.example.quiznat.présentation.vue.Fragment_login"
+        android:label="Fragment_login"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/fragment_inscription"
+        android:name="com.example.quiznat.présentation.vue.Fragment_inscription"
+        android:label="Fragment_inscription" />
+    <fragment
+        android:id="@+id/fragment_accueil"
+        android:name="com.example.quiznat.présentation.vue.Fragment_accueil"
+        android:label="fragment_accueil"
+        tools:layout="@layout/fragment_accueil" />
+    <fragment
+        android:id="@+id/fragment_catégorie"
+        android:name="com.example.quiznat.présentation.vue.Fragment_catégorie"
+        android:label="fragment_categorie"
+        tools:layout="@layout/fragment_categorie" />
+    <fragment
+        android:id="@+id/fragment_classement"
+        android:name="com.example.quiznat.présentation.vue.Fragment_classement"
+        android:label="fragment_classement"
+        tools:layout="@layout/fragment_classement" />
+    <fragment
+        android:id="@+id/fragment_fin"
+        android:name="com.example.quiznat.présentation.vue.Fragment_fin"
+        android:label="fragment_fin"
+        tools:layout="@layout/fragment_fin" />
+
+
+</navigation>

@@ -1,0 +1,23 @@
+﻿<table>
+    <tr>
+        <th>NOM</th>
+        <th></th>
+        <th>POINTS</th>
+
+    </tr>
+    @{ foreach (var j in ViewBag.lesJoueurs) {
+
+
+
+
+        <tr>
+            <td>@j.nom_joueur</td>
+            <td></td>
+            <td>@j.score_art</td>
+
+        </tr>
+
+                }
+    }
+    
+</table>

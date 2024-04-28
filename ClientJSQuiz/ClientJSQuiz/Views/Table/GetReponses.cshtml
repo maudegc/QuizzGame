@@ -1,0 +1,29 @@
+﻿<button class="btn btn-primary" onclick="getReponses()">Voir les réponses</button>
+
+<div class="container border bg-white h-70" id="reponse"></div>
+
+<script>
+    function getReponses() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4) {
+                if (xhttp.status == 200) {
+                    var rep = document.getElementById("reponse");
+                    rep.innerHTML = "";
+                    var reponses = JSON.parse(xhttp.responseText);
+                    var table = document.createElement("table");
+                    table.innerHTML = "<tr><th>Id de la réponse</th><th>Id de la question liée</th><th>Nom réponse</th></tr>";
+                    for (i in reponses) {
+                        table.innerHTML += "<tr><td>" + reponses[i].id_reponse + "</td><td>" + reponses[i].id_question + "</td><td>" + reponses[i].nom_reponse + "</td><tr>";
+                    };
+                }
+                rep.appendChild(table);
+            }
+        }
+        xhttp.open("GET", "https://localhost:44332/reponses", true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.setRequestHeader("Accept", "application/json, text/plain, */*");
+        xhttp.setRequestHeader("ApiKey", "1111");
+        xhttp.send();
+    }
+</script>
